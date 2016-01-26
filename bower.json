@@ -1,5 +1,5 @@
 {
-  "name": "conFusion",
+  "name": "ngConFusion",
   "version": "1.0.0",
   "description": "Website for an awesome restaurant",
   "main": "index.html",
@@ -10,7 +10,7 @@
     "Restaurant"
   ],
   "authors": [
-    "Jogesh Muppala"
+    "Antonio Martinez"
   ],
   "license": "MIT",
   "homepage": "",
