@@ -88,3 +88,10 @@ I had a lot of problems installing these packages in MS Windows 7 due to node-gy
 ``` bash
      gulp watch
 ```
+## Angular Scope
+
+- Since Angular involves writing a lot of JavaScript, once we introduce the $scope, we need to make sure that when the uglify task runs, it does not end up mangling the $scope. Otherwise the JavaScript code will not work. Fortunately, we have an gulp plugin named gulp-ng-annotate, which ensures the mangling does not cause any problems. We now need to add this plugin and update the gulpfile.js to include this plugin.
+- Install the gulp-ng-annotate plugin:
+``` bash
+     npm install gulp-ng-annotate --save-dev
+```     
