@@ -76,7 +76,9 @@ This will install the Gulp globally so that you can use it in all projects.
 This will install local per-project Gulp to use within your project.
 - Install all the Gulp plugins that you will need for this exercise. To do this, type the following at the command prompt:
 ``` bash
-npm install jshint gulp-jshint jshint-stylish gulp-imagemin gulp-concat gulp-uglify gulp-cssnano gulp-usemin gulp-cache gulp-changed gulp-rev gulp-rename gulp-notify  browser-sync del --save-dev
+npm install jshint gulp-jshint jshint-stylish gulp-imagemin gulp-concat 
+gulp-uglify gulp-cssnano gulp-usemin gulp-cache gulp-changed gulp-rev 
+gulp-rename gulp-notify  browser-sync del --save-dev
 ```
 I had a lot of problems installing these packages in MS Windows 7 due to node-gyp dependency. If you have any error installing them, follow instuctions in https://github.com/nodejs/node-gyp 
 - Similarly to grunt, you need to create a Gulp file containing the tasks to be run when you use Gulp. We have a file named gulpfile.js in the ngConFusion folder.
