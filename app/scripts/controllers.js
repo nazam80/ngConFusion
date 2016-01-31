@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('confusionApp')
-        
-        .controller('MenuController', ['$scope', 'menuFactory', function($scope, menuFactory) {    
+
+        .controller('MenuController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+            
             $scope.tab = 1;
             $scope.filtText = '';
             $scope.showDetails = false;
 
             $scope.dishes= menuFactory.getDishes();
-            
+
                         
             $scope.select = function(setTab) {
                 $scope.tab = setTab;
@@ -68,30 +69,48 @@ angular.module('confusionApp')
         }])
 
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
-        
-            $scope.dish= menuFactory.getDish(parseInt($stateParams.id,10));
+
+            var dish= menuFactory.getDish(parseInt($stateParams.id,10));
+            
+            $scope.dish = dish;
             
         }])
 
         .controller('DishCommentController', ['$scope', function($scope) {
             
-            //Step 1: Create a JavaScript object to hold the comment from the form
-            $scope.feedbackComment = {name:"", rating:5, comment:"", date:"" };
+            $scope.mycomment = {rating:5, comment:"", author:"", date:""};
             
             $scope.submitComment = function () {
                 
-                //Step 2: This is how you record the date               
-                $scope.feedbackComment.date = new Date().toISOString();
+                $scope.mycomment.date = new Date().toISOString();
+                console.log($scope.mycomment);
                 
-                // Step 3: Push your comment into the dish's comment array
-                $scope.dish.comments.push($scope.feedbackComment);
+                $scope.dish.comments.push($scope.mycomment);
                 
-                //Step 4: reset your form to pristine
                 $scope.commentForm.$setPristine();
                 
-                //Step 5: reset your JavaScript object that holds your comment
-                $scope.feedbackComment = {name:"", rating:5, comment:"", date:"" };
+                $scope.mycomment = {rating:5, comment:"", author:"", date:""};
             }
         }])
+        .controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
+
+            var dish= menuFactory.getDish(0);
+            var promotion= menuFactory.getPromotion(0);            
+            var chef = corporateFactory.getLeader(0);
+            
+            $scope.dish = dish;            
+            $scope.promotion = promotion;
+            $scope.chef = chef;
+            
+        }])
+        .controller('AboutController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
+
+            var leaders = corporateFactory.getLeaders();
+            
+            $scope.leaders = leaders;
+            
+        }])
+        
+
 
 ;
