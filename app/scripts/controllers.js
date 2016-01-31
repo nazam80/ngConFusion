@@ -103,7 +103,7 @@ angular.module('confusionApp')
             $scope.chef = chef;
             
         }])
-        .controller('AboutController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
+        .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
 
             var leaders = corporateFactory.getLeaders();
             
