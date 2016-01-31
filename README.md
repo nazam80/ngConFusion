@@ -97,8 +97,9 @@ I had a lot of problems installing these packages in MS Windows 7 due to node-gy
 ``` bash
      npm install gulp-ng-annotate --save-dev
 ```
-## Set up angular-route
-- Use Bower to install angular-route by typing the following at the command prompt:
+## Installing Angular UI-Router
+
+- Use Bower to install angular-ui-router by typing the following at the command prompt:
 ``` bash
-     bower install angular-route -S
-```
+     bower install angular-ui-router -S
+```     
