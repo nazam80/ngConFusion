@@ -103,3 +103,17 @@ I had a lot of problems installing these packages in MS Windows 7 due to node-gy
 ``` bash
      bower install angular-ui-router -S
 ```     
+
+## Setting up a Server using json-server
+- Installing json-server: json-server is a node module, and hence can be installed globally by typing the following at the command prompt:
+``` bash
+     npm install json-server -g
+```  
+- Start the server:
+``` bash
+     json-server --watch db.json
+```  
+- The json-server also provides a static web server. Any resources that you put in a folder named public in the json-server folder above, will be served by the server at the following address:
+``` bash
+  http://localhost:3000/
+```  
